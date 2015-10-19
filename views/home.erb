@@ -17,8 +17,8 @@
 
 		<div class="user-stats layout">
 			<p class="layout"><a href="/profile/<%= @user.id %>">Twizzles</a> <span><a href="/profile/<%= @user.id %>"><%= @twizzles.count %></a></span></p>
-			<p class="layout"><a href="/followers/<%= @user.id %>">Followers</a> <span><a href="/followers/<%= @user.id %>"><%= @followers.count %></a></span></p>
-			<p class="layout"><a href="/following/<%= @user.id %>">Following</a> <span><a href="/following/<%= @user.id %>"><%= @following.count %></a></span></p>
+			<p class="layout"><a href="/followers/<%= @user.id %>">Followers</a> <span><a href="/followers/<%= @user.id %>"><%#= @followers.count %></a></span></p>
+			<p class="layout"><a href="/following/<%= @user.id %>">Following</a> <span><a href="/following/<%= @user.id %>"><%#= @following.count %></a></span></p>
 		</div>
 	</div>
 
@@ -51,8 +51,6 @@
 	<hr />
 
 	<% @feed.sort_by { |key| key[:updated_at] }.reverse!.each do |twizzle| %>
-
-
 
 		<div class="twizzle layout">
 

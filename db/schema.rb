@@ -11,37 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015112651) do
+ActiveRecord::Schema.define(version: 20151019101010) do
 
-  create_table "posts", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "room_id"
-    t.string  "post_content"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "profile_headline"
-    t.string  "profile_content"
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
   end
 
-  create_table "room_users", force: :cascade do |t|
-    t.integer "room_id"
+  create_table "twizzles", force: :cascade do |t|
     t.integer "user_id"
+    t.string  "content"
+    t.string  "created_at"
+    t.string  "updated_at"
   end
 
-  create_table "rooms", force: :cascade do |t|
-    t.string "room_name"
-    t.string "room_description"
-  end
-
-  create_table "user_rooms", force: :cascade do |t|
+  create_table "user_groups", force: :cascade do |t|
+    t.integer "group_id"
     t.integer "user_id"
-    t.integer "room_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_name"
+    t.string "username"
+    t.string "fname"
+    t.string "lname"
+    t.string "headline"
+    t.string "email"
     t.string "password"
   end
 
