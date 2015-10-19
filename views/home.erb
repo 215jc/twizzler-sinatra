@@ -17,8 +17,8 @@
 
 		<div class="user-stats layout">
 			<p class="layout"><a href="/profile/<%= @user.id %>">Twizzles</a> <span><a href="/profile/<%= @user.id %>"><%= @twizzles.count %></a></span></p>
-			<p class="layout"><a href="/followers/<%= @user.id %>">Followers</a> <span><a href="/followers/<%= @user.id %>"><%#= @followers.count %></a></span></p>
-			<p class="layout"><a href="/following/<%= @user.id %>">Following</a> <span><a href="/following/<%= @user.id %>"><%#= @following.count %></a></span></p>
+			<p class="layout"><a href="/followers/<%= @user.id %>">Followers</a> <span><a href="/followers/<%= @user.id %>"><%= @followers.count %></a></span></p>
+			<p class="layout"><a href="/following/<%= @user.id %>">Following</a> <span><a href="/following/<%= @user.id %>"><%= @following.count %></a></span></p>
 		</div>
 	</div>
 
@@ -44,7 +44,6 @@
 		</p>
 		<button type="submit" class="btn btn-primary">Twizzle</button>
 	</form>
-
 
 	<h2>My Feed</h2>
 
@@ -95,7 +94,6 @@
 		# - - - - - - - - - - - - - - - - - - - - - - 
 	%>
 
-
 	<% if current_user.id == twizzle.user_id %>
 
 				<form method="POST" action="/delete-twizzle">
@@ -114,9 +112,7 @@
 
 	<% end %>
 
-
 			</div><!-- /form-wrapper -->
-
 
 		</div><!-- /twizzle -->
 
@@ -130,7 +126,4 @@
 		# - - - - - - - - - - - - - - - - - - - - - - 
 	%>
 
-
 </div>
-
-
