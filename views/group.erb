@@ -25,7 +25,7 @@
 	<hr />
 
 	<form method="POST" action="/follow-group">
-		<input type="hidden" name="follower_id" value="<%= @current_user.id %>">
+		<input type="hidden" name="follower_id" value="<%= current_user.id %>">
 		<input type="hidden" name="group_id" value="<%= @group.id %>">
 		<input type="hidden" name="followed_group_name" value="<%= @group.name %>">
 		<button type="submit" class="btn btn-primary">Follow Group</button>
@@ -68,7 +68,7 @@
 
 				<% if session[:session_user_id] %>
 
-					<% if @current_user.following.include?user %>
+					<% if current_user.following.include?user %>
 
 				<form method="POST" action="/unfollow">
 					<input type="hidden" name="follower_id" value="<%= session[:session_user_id] %>">
