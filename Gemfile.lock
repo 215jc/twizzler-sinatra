@@ -24,7 +24,7 @@ GEM
       json (>= 1.7.7, < 2.0)
     minitest (5.8.1)
     pg (0.18.3)
-    rack (1.4.0)
+    rack (1.6.4)
     rack-protection (1.5.3)
       rack
     rake (10.4.2)
