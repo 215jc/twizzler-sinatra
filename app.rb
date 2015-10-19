@@ -3,6 +3,7 @@ require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'pp'
 require './models'
+require './environments'
 
 enable :sessions
 
@@ -193,14 +194,14 @@ post '/delete-profile' do
 end
 
 post '/follow' do
-	Relationship.create(following_id: params[:followed_id], follower_id: params[:follower_id])
+	Relationship.create(followed_id: params[:followed_id], follower_id: params[:follower_id])
 	@followed_username = params[:followed_username]
 	flash[:notice] = "You're now following " + @followed_username + "!"
 	redirect back
 end
 
 post '/unfollow' do
-	Relationship.where("following_id = #{params[:followed_id]} and follower_id = #{params[:follower_id]}").destroy_all
+	Relationship.where("followed_id = #{params[:followed_id]} and follower_id = #{params[:follower_id]}").destroy_all
 	@followed_username = params[:followed_username]
 	flash[:notice] = "You have unfollowed " + @followed_username + "!"
 	redirect '/'
