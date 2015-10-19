@@ -200,7 +200,7 @@ post '/follow' do
 end
 
 post '/unfollow' do
-	Relationship.where("followed_id = #{params[:followed_id]} and follower_id = #{params[:follower_id]}").destroy_all
+	Relationship.where("following_id = #{params[:followed_id]} and follower_id = #{params[:follower_id]}").destroy_all
 	@followed_username = params[:followed_username]
 	flash[:notice] = "You have unfollowed " + @followed_username + "!"
 	redirect '/'
