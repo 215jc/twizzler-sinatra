@@ -193,7 +193,7 @@ post '/delete-profile' do
 end
 
 post '/follow' do
-	Relationship.create(followed_id: params[:followed_id], follower_id: params[:follower_id])
+	Relationship.create(following_id: params[:followed_id], follower_id: params[:follower_id])
 	@followed_username = params[:followed_username]
 	flash[:notice] = "You're now following " + @followed_username + "!"
 	redirect back
