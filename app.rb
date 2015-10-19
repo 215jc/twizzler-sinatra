@@ -5,7 +5,6 @@ require 'pp'
 require './models'
 
 enable :sessions
-set :database, "sqlite3:database.sqlite3"
 
 def current_user
 	if session[:session_user_id]
