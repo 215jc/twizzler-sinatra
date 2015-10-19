@@ -25,3 +25,5 @@ Push to heroku
 heroku run rake db:migrate
 
 connect to postgres DB using Psequel and import postgres.sql file (Use SSL)
+
+
