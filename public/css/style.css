@@ -52,6 +52,10 @@ body {
 	background-color: #ffffff;
 }
 
+/*.layout {
+	border: 1px solid red;
+}*/
+
 /* - - - - - - - - - - - - - - 
 	Header styles
  - - - - - - - - - - - - - - */
@@ -193,6 +197,3 @@ hr {
 	margin-top: 0;
 }
 
-/*.layout {
-	border: 1px solid red;
-}*/
