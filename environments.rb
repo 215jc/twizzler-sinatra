@@ -1,6 +1,10 @@
-#The environment variable DATABASE_URL should be in the following format:
-# => postgres://{user}:{password}@{host}:{port}/path
-configure :production, :development do
+
+configure :development do
+	set :database, "sqlite3:database.sqlite3"
+	set :show_exceptions, true
+end
+
+configure :production do
 	db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/twizzler')
 
 	ActiveRecord::Base.establish_connection(
