@@ -19,17 +19,21 @@
 			<p class="layout"><a href="/profile/<%= @user.id %>">Twizzles</a> <span><a href="/profile/<%= @user.id %>"><%= @twizzles.count %></a></span></p>
 			<p class="layout"><a href="/followers/<%= @user.id %>">Followers</a> <span><a href="/followers/<%= @user.id %>"><%= @followers.count %></a></span></p>
 			<p class="layout"><a href="/following/<%= @user.id %>">Following</a> <span><a href="/following/<%= @user.id %>"><%= @following.count %></a></span></p>
-		</div>
-	</div>
+		</div><!-- user-stats -->
+
+	</div><!-- user-info -->
 
 	<hr />
+
 	<a href="/profile/<%= @user.id %>">
 		<button type="button" class="btn btn-primary">My Profile</button>
 	</a>	
+
 	<a href="/settings/<%= @user.id %>">
 		<button type="button" class="btn btn-primary pull-right">My Settings</button>
-	</a>	
-</div>
+	</a>
+
+</div><!-- sidebar -->
 
 <div class="main layout">
 
