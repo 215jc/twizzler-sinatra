@@ -24,7 +24,7 @@
 
 	<hr />
 
-	<form method="POST" action="/follow-group">
+	<form method="POST" action="#">
 		<input type="hidden" name="follower_id" value="<%= current_user.id %>">
 		<input type="hidden" name="group_id" value="<%= @group.id %>">
 		<input type="hidden" name="followed_group_name" value="<%= @group.name %>">
